@@ -7,12 +7,13 @@ pipeline {
     }
 
     stages {
-        stage('Clone-code') {
+        stage("Build") {
             steps {
-                git branch: 'main', url: 'https://github.com/justcode01/tweet-trend-new'
+                sh 'mvn clean deploy'
 
             }
        }
    }
 }
+
 
