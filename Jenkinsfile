@@ -1,3 +1,4 @@
+def registry = 'https://justcode01.jfrog.io'
 pipeline {
     agent {
         node {
@@ -27,8 +28,8 @@ pipeline {
             sh "${scannerHome}/bin/sonar-scanner"
         }
         }
-        }
-    def registry = 'https://justcode01.jfrog.io'
+    }
+    
        stage("Jar Publish") {
         steps {
             script {
@@ -57,3 +58,4 @@ pipeline {
     }
 
 }
+
